@@ -332,114 +332,130 @@ body {
    Stili per Schermi Più Piccoli (Responsive Design)
    ========================================================================== */
 
-/* Media query per schermi con larghezza massima di 768px (es. tablet e smartphone) */
-@media (max-width: 768px) {
-    .welcome-banner {
-        margin-bottom: 10px;
-        font-size: 1rem;
-    }
+@media screen and (max-width: 990px) {
+  /* Welcome banner */
+  .welcome-banner {
+    text-align: center;
+    padding: 20px;
+  }
 
-    .welcome-banner h1 {
-        font-size: 1.5rem;
-    }
+  .welcome-banner h1 {
+    font-size: 1.4rem;
+  }
 
-    .welcome-banner p {
-        font-size: 1rem;
-    }
+  .welcome-banner p {
+    font-size: 1rem;
+  }
 
-    .section {
-        margin-bottom: 10px;
-        padding: 10px;
-        flex-direction: column; /* Impila gli elementi verticalmente su schermi piccoli */
-        align-items: center; /* Allinea gli elementi al centro orizzontalmente */
-    }
+  /* Icone zampa più piccole */
+  .fa-paw.fa-xl {
+    font-size: 1rem;
+  }
 
-    .section .content-block {
-        width: 100%; /* Occupano tutta la larghezza disponibile */
-        float: none;
-        margin-bottom: 15px;
-        margin-top: 0;
-    }
+  /* SEZIONE 1 */
+  .section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-    .section .text-block {
-        text-align: center; /* Centra il testo su schermi piccoli */
-        align-items: center; /* Allinea gli elementi (testo) al centro orizzontalmente */
-    }
+  .section .text-block {
+    padding: 10px;
+    width: 100%;
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .section .image-block {
-        float: none;
-    }
+  .section .image-block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .section-reverse {
-        margin-bottom: 10px;
-        padding: 10px;
-        flex-direction: column-reverse; /* Impila gli elementi verticalmente (immagine sopra il testo) */
-        align-items: center; /* Allinea gli elementi al centro orizzontalmente */
-    }
+  .section img {
+    max-width: 90%;
+    height: auto;
+    margin: 15px 0;
+    border-radius: 8px;
+    margin-right: 8%;
+  }
 
-    .section-reverse .content-block {
-        width: 100%;
-        float: none;
-        margin-bottom: 15px;
-        margin-top: 0;
-    }
+  .button-instagram-container {
+    text-align: center;
+    margin-bottom: 2rem;
+     margin-right: 9%;
+  }
 
-    .section-reverse .text-block {
-        text-align: center; /* Centra il testo */
-        align-items: center; /* Allinea gli elementi (testo) orizzontalmente */
-    }
+  .button-instagram {
+    font-size: 0.9rem;
+    padding: 18px;
+    display: inline-block;
+  }
 
-    .section-reverse .image-block {
-        float: none;
-    }
+  /* SEZIONE 2 */
+  .section-reverse {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-    footer.contact-section .text-block {
-        text-align: center;
-        font-size: 1rem;
-    }
+  .section-reverse .image-block {
+    order: -1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 
-    .button-eroi {
-        padding: 8px 15px;
-        font-size: 1rem;
-        margin-top: 10px;
-    }
+  .section-reverse img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    margin-right: 7%;
+  }
 
-    footer.contact-section {
-        padding: 15px;
-    }
+  .section-reverse .text-block {
+    padding: 10px;
+  }
 
-    footer.contact-section .content-block {
-        padding: 10px;
-        margin-top: 10px;
-        align-items: center;
-        text-align: center;
-    }
+  .button-wrapper {
+    margin-top: 10px;
+    text-align: center;
+  }
 
-    footer.contact-section .image-block img {
-        width: 60%;
-        max-width: 200px;
-        height: auto;
-        display: block;
-        margin: 10px auto;
-        border-radius: 8px;
-    }
+  .button-eroi {
+    font-size: 1rem;
+    padding: 18px;
+    display: inline-block;
+    font-weight: bold;
+  }
 
-    footer.contact-section h2 {
-        font-size: 1rem;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
+  /* FOOTER */
+  .custom-footer {
+    text-align: center;
+    padding: 20px 10px;
+  }
 
-    footer.contact-section ul {
-        margin-top: 5px;
-        margin-bottom: 0;
-    }
+  .footer-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
 
-    footer.contact-section li {
-        margin-top: 3px;
-    }
+  .footer-btn {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    width: auto;
+  }
 
-    footer.contact-section li a {
-        font-size: 1rem;
-    }
+  .privacy-text,
+  .copyright {
+    font-size: 0.75rem;
+    margin-top: 10px;
+  }
 }
+
+   
