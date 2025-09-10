@@ -1,386 +1,282 @@
-/* ==========================================================================
+/* ========================================================================== 
    Stili generali della pagina
    ========================================================================== */
 
-/* Stili per l'elemento body (sfondo, margini, padding, font, ecc.) */
 body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ADD8E6; /* Azzurro chiaro di sfondo */
-    border: 12px solid #ADD8E6; /* Bordo esterno dello stesso colore dello sfondo */
-    box-sizing: border-box;
-    min-height: 100vh; /* Assicura che il body occupi almeno l'altezza della viewport */
-    display: flex; /* Utilizzo di Flexbox per la disposizione degli elementi figli */
-    flex-direction: column; /* Disposizione degli elementi figli in colonna */
+    font-family: sans-serif; /* Font principale della pagina */
+    margin: 0; /* Rimuove margini default del browser */
+    padding: 0; /* Rimuove padding default del browser */
+    background-color: #ADD8E6; /* Colore di sfondo pagina */
+    border: 12px solid #ADD8E6; /* Bordo esterno della pagina */
+    box-sizing: border-box; /* Include padding e border nel calcolo larghezza/altezza */
+    min-height: 100vh; /* Altezza minima pari all'altezza finestra */
+    display: flex; /* Layout flex per contenitori figli */
+    flex-direction: column; /* Disposizione verticale dei figli */
 }
 
-/* ==========================================================================
-   Stili per la Navbar
+/* ========================================================================== 
+   Navbar
    ========================================================================== */
 
-/* Stili per la barra di navigazione principale */
 .navbar {
-    background-color: #ADD8E6; /* Sfondo della navbar uguale allo sfondo della pagina */
-    margin-top: 0;
+    background-color: #ADD8E6; /* Colore di sfondo navbar */
+    margin-top: 0; /* Nessun margine superiore */
 }
 
-/* Stili per il marchio (logo e testo) della navbar */
 .navbar-brand {
-    display: flex; /* Utilizzo di Flexbox per allineare logo e testo */
-    align-items: center; /* Allineamento verticale degli elementi al centro */
+    display: flex; /* Layout flessibile per logo + testo */
+    align-items: center; /* Allinea verticalmente al centro */
 }
 
 .navbar-brand a {
-    font-size: 1.5rem;
-    color: #000000; /* Colore del testo del marchio */
-    text-decoration: none; /* Rimozione della sottolineatura dai link */
+    font-size: 1.5rem; /* Dimensione testo brand */
+    color: #000; /* Colore testo brand */
+    text-decoration: none; /* Rimuove sottolineatura link */
 }
 
 .navbar-brand img {
-    margin-right: 10px; /* Spazio a destra dell'immagine del logo */
-}
-
-/* Stili per il marchio e i link di navigazione */
-.navbar-brand,
-.navbar-nav .nav-link {
-    color: #000000; /* Colore del testo dei link della navbar */
+    margin-right: 10px; /* Spazio tra logo e testo */
 }
 
 .navbar-brand:hover,
+.navbar-nav .nav-link,
 .navbar-nav .nav-link:hover {
-    color: #333333; /* Colore del testo dei link al passaggio del mouse */
+    color: #333; /* Cambia colore al passaggio del mouse */
 }
 
+/* ========================================================================== 
+   Hero Section
+   ========================================================================== */
 
 .hero-main {
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 90%;
-    background-color: #fff;
-    border-radius: 8px;
-    width: 100%;
+    padding: 20px; /* Spaziatura interna */
+    margin: 20px auto; /* Margine verticale e centratura orizzontale */
+    max-width: 90%; /* Larghezza massima */
+    width: 100%; /* Larghezza piena */
+    background-color: #fff; /* Sfondo bianco */
+    border-radius: 8px; /* Angoli arrotondati */
 }
 
 .hero-title {
-    color: #333;
-    text-align: center;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 30px;
+    color: #333; /* Colore testo titolo */
+    text-align: center; /* Allineamento al centro */
+    margin: 1rem 0 30px 0; /* Margine superiore e inferiore */
 }
 
-/* Griglia dei cani */
-.dog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
-    gap: 20px;
-}
-
-/* CARD con effetto flip */
-.dog-card {
-    perspective: 1000px; /* serve per il 3D flip */
-    margin: 1rem;
-}
-
-.dog-card-inner {
-    position: relative;
-    width: 100%;
-    height: 500px; /* altezza fissa */
-    text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    cursor: pointer;
-}
-
-.dog-card-inner.flipped {
-    transform: rotateY(180deg);
-}
-
-
-/* Lato front */
-.dog-card-front, .dog-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-    backface-visibility: hidden;
-    box-shadow: 0 0.5rem 0.25rem rgba(0, 0, 0, 0.09);
-    display: flex;
-    flex-direction: column;
-    background-color: #ADD8E6;
-    overflow: hidden;
-}
-
-/* Front */
-.dog-card-front {
-    z-index: 2;
-}
-
-/* Back */
-.dog-card-back {
-    transform: rotateY(180deg);
-    padding: 15px;
-    background-color: #ffffff;
-    color: #495057;
-    overflow-y: auto;
-    text-align: left;
-}
-
-/* Immagine */
-.dog-image-container {
-    width: 100%;
-    height: 11000px;
-    overflow: hidden;
-}
-
-.dog-image {
-    margin-top: 1rem;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-}
-
-/* Info fronte */
-.dog-info {
-    padding: 10px;
-    color: #212529;
-}
-
-.dog-name {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.dog-assistance {
-    font-size: 1.5rem;
-    color: #6c757d;
-}
-
-/* Pulsante Instagram sotto immagine */
-.instagram-button {
-  font-size: 1rem;
-  padding: 8px 15px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background-color: #e1306c;
-  color: white;
-  border: none;
-  border-radius: 999px; /* TONDEGGIANTE */
-  text-decoration: none;
-  transition: transform 0.3s ease;
-  margin: 0 auto;
-  margin-bottom: 2rem;
-}
-.instagram-button i {
-  font-size: 1.2rem;
-}
-
-.instagram-button:hover,
-.instagram-button:focus {
-    background-color: #b02857;
-    text-decoration: none;
-    color: white;
-}
-
-/* Storia retro */
-.dog-story-container {
-    max-height: 480px;
-    overflow-y: auto;
-}
-
-.dog-story {
-    font-size: 0.5rem;
-    margin: 0;
-}
-
-/* ==========================================================================
-   Stili per il Footer
+/* ========================================================================== 
+   Griglia e Card dei cani
    ========================================================================== */
+
+.dog-grid {
+    display: grid; /* Layout a griglia */
+    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr)); /* Colonne responsive */
+    gap: 20px; /* Spazio tra le card */
+}
+
+.dog-card {
+    background-color: #ffffffcc; /* Sfondo semi-trasparente card */
+    border-radius: 12px; /* Angoli arrotondati */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Ombra della card */
+    overflow: hidden; /* Nasconde contenuti eccedenti */
+    display: flex; /* Layout flessibile verticale */
+    flex-direction: column; /* Contenuto verticale */
+    cursor: pointer; /* Puntatore al passaggio del mouse */
+    margin: 20px; /* Spazio esterno */
+    position: relative; /* Necessario per posizionare figli assoluti */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animazioni hover */
+}
+
+.dog-card .dog-image-container {
+    width: 100%; /* Larghezza piena */
+    height: 250px; /* Altezza fissa immagine */
+    overflow: hidden; /* Nasconde eccedenze immagine */
+    position: relative; /* Per posizionamento assoluto interno */
+}
+
+.dog-card .dog-image {
+    width: 100%; /* Larghezza immagine */
+    height: 100%; /* Altezza immagine */
+    object-fit: contain; /* Immagine contenuta senza tagliare */
+    transition: transform 0.3s ease; /* Animazione zoom hover */
+    z-index: 1; /* Sopra descrizione di base */
+}
+
+.dog-card:hover .dog-image {
+    transform: scale(1.02); /* Zoom leggero al passaggio del mouse */
+}
+
+/* Info principali */
+.dog-card .dog-info {
+    padding: 15px 20px; /* Spaziatura interna */
+    text-align: center; /* Testo centrato */
+    position: relative; /* Necessario per sovrapposizione */
+    background-color: transparent; /* Sfondo trasparente */
+    z-index: 1; /* Sopra descrizione base */
+}
+
+.dog-card .dog-name {
+    font-size: 1.8rem; /* Dimensione nome */
+    font-weight: bold; /* Grassetto */
+    margin: 10px 0 5px; /* Margine sopra e sotto */
+    color: #224f71; /* Colore nome */
+}
+
+.dog-card .dog-assistance {
+    font-size: 1.2rem; /* Dimensione ruolo */
+    color: #6c757d; /* Colore ruolo */
+    margin-bottom: 10px; /* Spazio sotto ruolo */
+}
+
+/* Descrizione “dietro” */
+.dog-card .dog-story-container {
+    position: absolute; /* Posizionamento assoluto sopra card */
+    top: 0; /* Allineata in alto */
+    left: 0; /* Allineata a sinistra */
+    width: 100%; /* Larghezza piena */
+    height: 80%; /* Altezza limitata */
+    padding: 15px 20px; /* Spazio interno */
+    font-size: 1rem; /* Dimensione testo */
+    color: #333; /* Colore testo */
+    background-color: #ffffffee; /* Sfondo semi-trasparente */
+    opacity: 0; /* Inizialmente invisibile */
+    overflow-y: auto; /* Scroll verticale se troppo lungo */
+    border-radius: 12px; /* Angoli arrotondati */
+    z-index: 1; /* Sotto info e immagine */
+    transition: opacity 0.3s ease; /* Animazione apparizione */
+}
+
+.dog-card:hover .dog-story-container {
+    opacity: 1; /* Diventa visibile */
+    z-index: 5; /* Sopra immagine e nome */
+}
+
+/* Bottone Instagram */
+.dog-card .instagram-button {
+    margin: 10px auto 20px; /* Centrato con margini */
+    padding: 10px 20px; /* Spaziatura interna */
+    font-size: 1rem; /* Dimensione testo */
+    border-radius: 8px; /* Angoli arrotondati */
+    background-color: #e1306c; /* Colore sfondo Instagram */
+    color: #fff; /* Colore testo bianco */
+    text-decoration: none; /* Nessuna sottolineatura */
+    display: inline-flex; /* Layout flessibile orizzontale */
+    align-items: center; /* Allinea icona e testo verticalmente */
+    justify-content: center; /* Centra contenuto orizzontalmente */
+    gap: 8px; /* Spazio tra icona e testo */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animazioni hover */
+    z-index: 10; /* Sopra tutto */
+}
+
+.dog-card .instagram-button:hover {
+    background-color: #f06595; /* Cambio colore hover */
+    transform: scale(1.05); /* Leggero ingrandimento hover */
+}
+
+/* ========================================================================== 
+   Footer
+   ========================================================================== */
+
 .custom-footer {
-  background-color: #224f71; /* azzurro scuro */
-  padding: 20px 10px;
-  text-align: center;
-  color: #fff;
+    background-color: #224f71; /* Sfondo footer */
+    padding: 20px 10px; /* Spaziatura interna */
+    text-align: center; /* Testo centrato */
+    color: #fff; /* Colore testo bianco */
 }
 
 .footer-buttons {
-  margin-bottom: 15px;
+    margin-bottom: 15px; /* Spazio sotto pulsanti */
 }
 
 .footer-btn {
-  display: inline-block;
-  margin: 5px 10px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 999px;
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
+    display: inline-block; /* Layout orizzontale pulsanti */
+    margin: 5px 10px; /* Spazio tra pulsanti */
+    padding: 10px 20px; /* Spaziatura interna */
+    border: none; /* Nessun bordo */
+    border-radius: 999px; /* Pulsante tondo/ellittico */
+    color: white; /* Colore testo */
+    font-weight: bold; /* Grassetto */
+    text-decoration: none; /* Nessuna sottolineatura */
+    transition: background-color 0.3s ease; /* Animazione hover */
 }
 
-.footer-btn.insta {
-  background-color: #e1306c; /* rosa Instagram */
-}
+.footer-btn.insta { background-color: #e1306c; } /* Colore specifico Instagram */
+.footer-btn.tiktok { background-color: #444; } /* Colore TikTok */
+.footer-btn.email { background-color: #3498db; } /* Colore Email */
 
-.footer-btn.tiktok {
-  background-color: #444; /* grigio scuro */
-}
-
-.footer-btn.email {
-  background-color: #3498db; /* azzurro email */
-}
-
-.footer-btn:hover {
-  opacity: 0.85;
-}
+.footer-btn:hover { opacity: 0.85; } /* Hover leggermente trasparente */
 
 .privacy-text {
-  font-size: 13px;
-  color: #ccc;
-  margin: 10px auto;
-  max-width: 500px;
+    font-size: 13px; /* Dimensione testo privacy */
+    color: #ccc; /* Colore testo grigio chiaro */
+    margin: 10px auto; /* Margini verticali e centratura */
+    max-width: 500px; /* Larghezza massima */
 }
 
 .copyright {
-  font-size: 12px;
-  color: #bbb;
-  margin-top: 10px;
+    font-size: 12px; /* Dimensione testo copyright */
+    color: #bbb; /* Colore testo grigio */
+    margin-top: 10px; /* Spazio sopra */
 }
 
+/* ========================================================================== 
+   Media Queries Mobile
+   ========================================================================== */
 
-/* Media queries per mobile */
 @media (max-width: 990px) {
 
-  /* Griglia 1 colonna */
-  .dog-grid {
-    grid-template-columns: 1fr;
-  }
+    .dog-grid {
+        grid-template-columns: 1fr; /* Una colonna per card */
+    }
 
-  /* Card container */
-  .dog-card-inner {
-    min-height: 600px;   /* più alta per contenuto e foto */
-    display: flex;
-    flex-direction: column;
-    border-radius: 12px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    background: #fff;
-  }
+    .dog-card {
+        width: 90%; /* Larghezza ridotta per mobile */
+        margin: 15px auto; /* Centrata con margine */
+    }
 
-  /* Fronte card */
-  .dog-card-front {
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-  }
+    .dog-card .dog-image-container {
+        height: 200px; /* Altezza immagine ridotta */
+    }
 
-  /* Contenitore immagine */
-  .dog-image-container {
-    width: 80%;
-    margin: 0 auto 1.5rem auto; /* margine sotto per distanziare dal testo */
-    height: 400px;  /* altezza foto fissa */
-    overflow: hidden;
-    border-radius: 8px;
-  }
+    .dog-card .dog-name { font-size: 1.5rem; } /* Nome più piccolo */
+    .dog-card .dog-assistance { font-size: 1rem; } /* Ruolo più piccolo */
 
-  /* Immagine cane */
-  .dog-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;  /* riempie contenitore mantenendo proporzioni */
-    border-radius: 8px;
-    display: block;
-  }
+    .dog-card .dog-story-container {
+        font-size: 0.95rem; /* Testo leggermente più piccolo */
+        padding: 0 15px 10px; /* Spaziatura interna adattata */
+        position: relative; /* Posizionamento naturale sotto immagine */
+        opacity: 1; /* Sempre visibile */
+        background-color: transparent; /* Sfondo trasparente */
+        z-index: 1; /* Dietro eventuali elementi */
+    }
 
-  /* Contenitore storia */
-  .dog-story-container {
-    flex: 1 1 auto;
-    max-height: 780px;
-    overflow-y: auto; /* scroll verticale se testo troppo lungo */
-    padding: 0 1rem;
-    font-size: 1rem;
-    line-height: 1.4;
-    color: #333;
-  }
+    .dog-card .instagram-button {
+        font-size: 0.95rem; /* Testo più piccolo */
+        padding: 8px 16px; /* Spaziatura ridotta */
+    }
 
-  /* Bottone Instagram sotto la card */
-  .instagram-button {
-    font-size: 0.9rem !important;
-    padding: 8px 16px !important;
-    border-radius: 999px !important;
-    display: flex !important;
-    justify-content: center !important;
-    margin: 2rem auto 2rem auto !important;
-    width: fit-content;
-    background-color: #e1306c;
-    color: white;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
+    .custom-footer {
+        padding: 20px 10px; /* Padding ridotto */
+    }
 
-  .instagram-button:hover {
-     background-color: #b02857;
-    text-decoration: none;
-    color: white;
-  }
+    .footer-buttons {
+        display: flex; /* Layout flessibile */
+        flex-direction: column; /* Colonna verticale */
+        gap: 8px; /* Spazio tra pulsanti */
+        align-items: center; /* Centra pulsanti */
+    }
 
-  .instagram-button i {
-    font-size: 1rem !important;
-    margin-left: 8px;
-  }
+    .footer-btn {
+        font-size: 0.85rem; /* Testo più piccolo */
+        padding: 6px 12px; /* Padding ridotto */
+    }
 
-  /* Welcome banner (già gestito ma ripetuto per coerenza) */
-  .welcome-banner {
-    text-align: center;
-    padding: 20px;
-  }
+    .privacy-text,
+    .copyright {
+        font-size: 0.75rem; /* Testo piccolo */
+        margin-top: 10px; /* Spazio superiore */
+    }
 
-  .welcome-banner h1 {
-    font-size: 1.4rem;
-  }
-
-  .welcome-banner p {
-    font-size: 1rem;
-  }
-
-  /* Icone zampa più piccole */
-  .fa-paw.fa-xl {
-    font-size: 1rem;
-  }
-
-  /* Footer ridotto e impilato */
-  .custom-footer {
-    text-align: center;
-    padding: 20px 10px;
-  }
-
-  .footer-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: center;
-  }
-
-  .footer-btn {
-    font-size: 0.85rem;
-    padding: 6px 12px;
-    width: auto;
-  }
-
-  .privacy-text,
-  .copyright {
-    font-size: 0.75rem;
-    margin-top: 10px;
-  }
-
-  /* Corpo pagina: bordo più sottile */
-  body {
-    border: 6px solid #ADD8E6;
-  }
+    body {
+        border: 6px solid #ADD8E6; /* Bordo ridotto per mobile */
+    }
 }
